@@ -10,139 +10,43 @@
 <style>
   :root{
     box-sizing:border-box;
-    padding-top:env(safe-area-inset-top,0px);
-    padding-bottom:env(safe-area-inset-bottom,0px);
-
-    --ink:#1B2A4A;
-    --paper:#EFE9DA;
-    --card:#FFFDF7;
-    --charcoal:#2A2620;
-    --muted:#6b6455;
+    --ink:#1B2A4A; --paper:#EFE9DA; --card:#FFFDF7; --charcoal:#2A2620; --muted:#6b6455;
     --line:rgba(27,42,74,0.16);
-
-    --day1:#D99A2B;
-    --day1-soft:#F6E4BD;
-    --day2:#C0603D;
-    --day2-soft:#F1D3C4;
-    --day3:#2E7D74;
-    --day3-soft:#CDE6E2;
-    --day4:#7A4B6E;
-    --day4-soft:#E7D7E2;
+    --day1:#D99A2B; --day1-soft:#F6E4BD;
+    --day2:#C0603D; --day2-soft:#F1D3C4;
+    --day3:#2E7D74; --day3-soft:#CDE6E2;
+    --day4:#7A4B6E; --day4-soft:#E7D7E2;
   }
-
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --ink:#EDE6D6;
-      --paper:#141C29;
-      --card:#1B2534;
-      --charcoal:#E7E1D2;
-      --muted:#9b9384;
+      --ink:#EDE6D6; --paper:#141C29; --card:#1B2534; --charcoal:#E7E1D2; --muted:#9b9384;
       --line:rgba(237,230,214,0.16);
-      --day1-soft:#3a2f16;
-      --day2-soft:#3a231a;
-      --day3-soft:#173330;
-      --day4-soft:#2f2030;
+      --day1-soft:#3a2f16; --day2-soft:#3a231a; --day3-soft:#173330; --day4-soft:#2f2030;
     }
   }
   :root[data-theme="dark"]{
-    --ink:#EDE6D6;
-    --paper:#141C29;
-    --card:#1B2534;
-    --charcoal:#E7E1D2;
-    --muted:#9b9384;
+    --ink:#EDE6D6; --paper:#141C29; --card:#1B2534; --charcoal:#E7E1D2; --muted:#9b9384;
     --line:rgba(237,230,214,0.16);
-    --day1-soft:#3a2f16;
-    --day2-soft:#3a231a;
-    --day3-soft:#173330;
-    --day4-soft:#2f2030;
+    --day1-soft:#3a2f16; --day2-soft:#3a231a; --day3-soft:#173330; --day4-soft:#2f2030;
   }
-
-  html{ scroll-padding-top:env(safe-area-inset-top,0px); }
   *{ box-sizing:border-box; }
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--charcoal);
-    font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{ margin:0; background:var(--paper); color:var(--charcoal); font-family:'Space Grotesk',system-ui,-apple-system,sans-serif; -webkit-font-smoothing:antialiased; }
   a{ color:inherit; }
-
   .wrap{ max-width:760px; margin:0 auto; padding:0 20px; }
 
-  /* ---------- HERO ---------- */
-  .hero{
-    background:#12203B;
-    color:#F4EEDD;
-    padding:calc(env(safe-area-inset-top,0px) + 44px) 0 34px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero::before{
-    content:"";
-    position:absolute; top:-40%; right:-18%;
-    width:520px; height:520px;
-    background:
-      repeating-conic-gradient(from 0deg, rgba(217,154,43,0.16) 0deg 6deg, transparent 6deg 18deg);
-    border-radius:50%;
-    pointer-events:none;
-  }
+  .hero{ background:#12203B; color:#F4EEDD; padding:44px 0 34px; position:relative; overflow:hidden; }
+  .hero::before{ content:""; position:absolute; top:-40%; right:-18%; width:520px; height:520px; background:repeating-conic-gradient(from 0deg, rgba(217,154,43,0.16) 0deg 6deg, transparent 6deg 18deg); border-radius:50%; pointer-events:none; }
   .hero-inner{ position:relative; z-index:1; }
-  .eyebrow{
-    font-size:0.82rem;
-    letter-spacing:0.02em;
-    color:#D99A2B;
-    margin:0 0 6px;
-  }
-  h1{
-    font-family:'Fraunces',serif;
-    font-weight:900;
-    font-size:clamp(2.6rem,10vw,4.4rem);
-    line-height:0.98;
-    margin:0 0 10px;
-    letter-spacing:-0.01em;
-  }
-  .hero p.sub{
-    font-size:1.02rem;
-    max-width:34ch;
-    color:#CFC6AE;
-    margin:0 0 22px;
-  }
-  .stat-strip{
-    display:flex; gap:22px; flex-wrap:wrap;
-    border-top:1px solid rgba(244,238,221,0.18);
-    padding-top:18px;
-  }
-  .stat b{
-    display:block; font-family:'Fraunces',serif; font-weight:700;
-    font-size:1.5rem; color:#F4EEDD;
-  }
+  .eyebrow{ font-size:0.82rem; letter-spacing:0.02em; color:#D99A2B; margin:0 0 6px; }
+  h1{ font-family:'Fraunces',serif; font-weight:900; font-size:clamp(2.6rem,10vw,4.4rem); line-height:0.98; margin:0 0 10px; letter-spacing:-0.01em; }
+  .hero p.sub{ font-size:1.02rem; max-width:34ch; color:#CFC6AE; margin:0 0 22px; }
+  .stat-strip{ display:flex; gap:22px; flex-wrap:wrap; border-top:1px solid rgba(244,238,221,0.18); padding-top:18px; }
+  .stat b{ display:block; font-family:'Fraunces',serif; font-weight:700; font-size:1.5rem; color:#F4EEDD; }
   .stat span{ font-size:0.78rem; color:#A9A08A; }
 
-  /* ---------- DAY NAV ---------- */
-  .daynav{
-    position:sticky;
-    top:env(safe-area-inset-top,0px);
-    z-index:10;
-    background:var(--paper);
-    border-bottom:1px solid var(--line);
-  }
-  .daynav-inner{
-    max-width:760px; margin:0 auto; padding:10px 20px;
-    display:flex; gap:8px; overflow-x:auto;
-  }
-  .daybtn{
-    flex:0 0 auto;
-    display:flex; align-items:center; gap:7px;
-    padding:8px 14px;
-    border:1px solid var(--line);
-    border-radius:100px;
-    background:var(--card);
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:600; font-size:0.86rem;
-    color:var(--charcoal);
-    cursor:pointer;
-  }
+  .daynav{ position:sticky; top:0; z-index:10; background:var(--paper); border-bottom:1px solid var(--line); }
+  .daynav-inner{ max-width:760px; margin:0 auto; padding:10px 20px; display:flex; gap:8px; overflow-x:auto; }
+  .daybtn{ flex:0 0 auto; display:flex; align-items:center; gap:7px; padding:8px 14px; border:1px solid var(--line); border-radius:100px; background:var(--card); font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:0.86rem; color:var(--charcoal); cursor:pointer; }
   .daybtn .dot{ width:9px; height:9px; border-radius:50%; }
   .daybtn.active{ border-color:currentColor; }
   .daybtn.active[data-d="1"]{ color:var(--day1); background:var(--day1-soft); }
@@ -150,103 +54,86 @@
   .daybtn.active[data-d="3"]{ color:var(--day3); background:var(--day3-soft); }
   .daybtn.active[data-d="4"]{ color:var(--day4); background:var(--day4-soft); }
 
-  /* ---------- DAY SECTION ---------- */
-  .day{ padding:30px 0 8px; display:none; }
-  .day.show{ display:block; }
+  /* ---------- MAP (persistent, shared across days) ---------- */
+  .mapzone{ padding-top:20px; }
+  .daymap-wrap{ border:1px solid var(--line); border-radius:3px; padding:10px; background:var(--card); }
+  #map{ width:100%; height:320px; border-radius:2px; background:#e8e3d5; }
+  .daymap-caption{ font-size:0.72rem; color:var(--muted); margin-top:8px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
 
-  .day-head{
-    display:flex; align-items:baseline; gap:12px;
-    margin-bottom:6px;
-  }
-  .day-num{
-    font-family:'Fraunces',serif; font-weight:900; font-size:2rem;
-  }
+  .keyprompt{ border:1px dashed var(--line); border-radius:3px; padding:16px; background:var(--card); font-size:0.86rem; line-height:1.55; }
+  .keyprompt p{ margin:0 0 10px; }
+  .keyprompt code{ background:var(--day1-soft); padding:2px 6px; border-radius:4px; font-size:0.82rem; }
+  .keyrow{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+  .keyrow input{ flex:1 1 220px; padding:9px 11px; border:1px solid var(--line); border-radius:4px; font-family:'Space Grotesk',sans-serif; font-size:0.86rem; background:var(--paper); color:var(--charcoal); }
+  .keyrow button{ padding:9px 16px; border:none; border-radius:4px; background:var(--ink); color:var(--paper); font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:0.86rem; cursor:pointer; }
+  .keyprompt .small{ font-size:0.76rem; color:var(--muted); margin-top:8px; }
+  .changekey{ font-size:0.72rem; color:var(--muted); text-decoration:underline; cursor:pointer; margin-top:8px; display:inline-block; }
+
+  .day{ padding:24px 0 8px; display:none; }
+  .day.show{ display:block; }
+  .day-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:6px; }
+  .day-num{ font-family:'Fraunces',serif; font-weight:900; font-size:2rem; }
   .day[data-accent="1"] .day-num{ color:var(--day1); }
   .day[data-accent="2"] .day-num{ color:var(--day2); }
   .day[data-accent="3"] .day-num{ color:var(--day3); }
   .day[data-accent="4"] .day-num{ color:var(--day4); }
+  .day-title{ font-family:'Fraunces',serif; font-weight:700; font-size:1.5rem; margin:0; }
+  .day-theme{ color:var(--muted); font-size:0.92rem; margin:6px 0 22px; max-width:52ch; }
 
-  .day-title{
-    font-family:'Fraunces',serif; font-weight:700; font-size:1.5rem;
-    margin:0;
-  }
-  .day-theme{ color:var(--muted); font-size:0.92rem; margin:6px 0 26px; max-width:52ch; }
-
-  /* mini route strip */
-  .route{
-    display:flex; align-items:center; gap:0;
-    overflow-x:auto; padding:6px 0 22px;
-    -webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);
-  }
-  .route .seg{ display:flex; align-items:center; flex:0 0 auto; }
-  .route .node{
-    width:34px; height:34px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-size:1rem; flex:0 0 auto;
-    border:1.5px solid var(--line);
-    background:var(--card);
-  }
-  .route .connector{ width:22px; height:1.5px; background:var(--line); flex:0 0 auto; }
-
-  /* timeline */
   .timeline{ position:relative; padding-left:26px; }
-  .timeline::before{
-    content:""; position:absolute; left:9px; top:6px; bottom:6px;
-    width:1.5px; background:var(--line);
-  }
-  .stop{ position:relative; padding-bottom:26px; }
+  .timeline::before{ content:""; position:absolute; left:9px; top:6px; bottom:6px; width:1.5px; background:var(--line); }
+  .stop{ position:relative; padding-bottom:26px; scroll-margin-top:16px; }
   .stop:last-child{ padding-bottom:4px; }
-  .stop::before{
-    content:""; position:absolute; left:-26px; top:3px;
-    width:9px; height:9px; border-radius:50%;
-    background:var(--card); border:2px solid var(--line);
-  }
+  .stop::before{ content:""; position:absolute; left:-26px; top:3px; width:9px; height:9px; border-radius:50%; background:var(--card); border:2px solid var(--line); }
   .day[data-accent="1"] .stop::before{ border-color:var(--day1); }
   .day[data-accent="2"] .stop::before{ border-color:var(--day2); }
   .day[data-accent="3"] .stop::before{ border-color:var(--day3); }
   .day[data-accent="4"] .stop::before{ border-color:var(--day4); }
 
-  .stop-time{
-    font-size:0.76rem; font-weight:600; color:var(--muted);
-    letter-spacing:0.02em; margin-bottom:4px;
-  }
-  .stop-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:2px;
-    padding:14px 16px;
-  }
+  .stop-time{ font-size:0.76rem; font-weight:600; color:var(--muted); letter-spacing:0.02em; margin-bottom:4px; }
+  .stop-card{ background:var(--card); border:1px solid var(--line); border-radius:2px; padding:14px 16px; cursor:pointer; transition:box-shadow 0.2s ease; }
   .stop-name-row{ display:flex; align-items:center; gap:9px; margin-bottom:3px; }
   .stop-icon{ font-size:1.05rem; }
   .stop-name{ font-weight:600; font-size:1.03rem; }
   .stop-area{ font-size:0.78rem; color:var(--muted); margin-bottom:8px; }
   .stop-note{ font-size:0.9rem; line-height:1.5; }
-  .tags{ display:flex; gap:6px; margin-top:10px; flex-wrap:wrap; }
-  .tag{
-    font-size:0.72rem; padding:3px 9px; border-radius:100px;
-  }
+  .tags{ display:flex; gap:6px; margin-top:10px; flex-wrap:wrap; align-items:center; }
+  .maplink{ font-size:0.72rem; color:var(--ink); text-decoration:none; border-bottom:1px dotted var(--muted); }
+  .taglink{ margin-left:auto; }
+  .pick-body .maplink{ display:inline-block; margin-left:4px; white-space:nowrap; }
+  .tag{ font-size:0.72rem; padding:3px 9px; border-radius:100px; }
   .day[data-accent="1"] .tag{ background:var(--day1-soft); color:var(--day1); }
   .day[data-accent="2"] .tag{ background:var(--day2-soft); color:var(--day2); }
   .day[data-accent="3"] .tag{ background:var(--day3-soft); color:var(--day3); }
   .day[data-accent="4"] .tag{ background:var(--day4-soft); color:var(--day4); }
 
-  /* ---------- GOOD TO KNOW ---------- */
+  .stop-photo{ width:100%; border-radius:2px; margin-bottom:10px; display:block; max-height:220px; object-fit:cover; }
+  .stop-photo-credit{ font-size:0.68rem; color:var(--muted); margin:-6px 0 10px; }
+  .picks{ margin-top:12px; padding-top:10px; border-top:1px dashed var(--line); }
+  .picks-label{ font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); margin-bottom:6px; }
+  .pick{ display:flex; gap:8px; font-size:0.84rem; line-height:1.4; margin-bottom:6px; }
+  .pick:last-child{ margin-bottom:0; }
+  .pick-tag{ flex:0 0 auto; font-size:0.68rem; font-weight:700; padding:2px 7px; border-radius:100px; height:fit-content; margin-top:1px; }
+  .day[data-accent="1"] .pick-tag{ background:var(--day1-soft); color:var(--day1); }
+  .day[data-accent="2"] .pick-tag{ background:var(--day2-soft); color:var(--day2); }
+  .day[data-accent="3"] .pick-tag{ background:var(--day3-soft); color:var(--day3); }
+  .day[data-accent="4"] .pick-tag{ background:var(--day4-soft); color:var(--day4); }
+  .pick-body b{ font-weight:600; }
+  .pick-body span{ color:var(--muted); }
+
+  @keyframes flashring{ 0%{ box-shadow:0 0 0 0 rgba(0,0,0,0.001); } 25%{ box-shadow:0 0 0 3px var(--flashcolor); } 100%{ box-shadow:0 0 0 0 rgba(0,0,0,0); } }
+  .stop-card.flash{ animation:flashring 1.1s ease; }
+
   .know{ padding:36px 0 10px; border-top:1px solid var(--line); margin-top:26px; }
   .know h2{ font-family:'Fraunces',serif; font-size:1.4rem; margin:0 0 18px; }
   .know-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
   @media(min-width:520px){ .know-grid{ grid-template-columns:1fr 1fr; } }
-  .know-card{
-    border:1px solid var(--line); border-radius:2px; padding:14px 16px;
-    background:var(--card);
-  }
+  .know-card{ border:1px solid var(--line); border-radius:2px; padding:14px 16px; background:var(--card); }
   .know-card .k-icon{ font-size:1.2rem; margin-bottom:6px; display:block; }
   .know-card b{ display:block; font-size:0.92rem; margin-bottom:4px; }
   .know-card p{ margin:0; font-size:0.86rem; color:var(--muted); line-height:1.5; }
 
-  footer{
-    padding:30px 0 calc(env(safe-area-inset-bottom,0px) + 30px);
-    text-align:center; color:var(--muted); font-size:0.78rem;
-  }
+  footer{ padding:30px 0 40px; text-align:center; color:var(--muted); font-size:0.78rem; }
 </style>
 </head>
 <body>
@@ -255,10 +142,10 @@
   <div class="wrap hero-inner">
     <p class="eyebrow">Trip itinerary</p>
     <h1>MUMBAI<br>4 DAYS</h1>
-    <p class="sub">Temples, ghats, an island fort, colonial Fort district, a slum tour, and two sunsets. Optimized for a driver and car.</p>
+    <p class="sub">Temples, ghats, an island fort, colonial Fort district, a slum tour, and two sunsets — with specific cafes, shops and food stalls to actually go to.</p>
     <div class="stat-strip">
       <div class="stat"><b>4</b><span>days</span></div>
-      <div class="stat"><b>21</b><span>stops</span></div>
+      <div class="stat"><b>25</b><span>stops</span></div>
       <div class="stat"><b>2</b><span>sunsets</span></div>
       <div class="stat"><b>🚗</b><span>driver + car</span></div>
     </div>
@@ -269,6 +156,22 @@
   <div class="daynav-inner" id="daynav"></div>
 </nav>
 
+<div class="wrap mapzone">
+  <div id="keyPrompt" class="keyprompt">
+    <p><b>Live map needs a Google Maps API key.</b> Get one free at the <a href="https://console.cloud.google.com/google/maps-apis/credentials" target="_blank" rel="noopener">Google Cloud Console</a> (enable "Maps JavaScript API", add a billing card — the first 10,000 map loads/month are free). Paste it below; it's saved only in this browser.</p>
+    <div class="keyrow">
+      <input id="keyInput" type="text" placeholder="AIzaSy..." autocomplete="off" />
+      <button onclick="saveKey()">Save &amp; load map</button>
+    </div>
+    <p class="small">Restrict the key to your GitHub Pages domain (Application restrictions → HTTP referrers) so no one else can use it.</p>
+  </div>
+  <div class="daymap-wrap" id="mapCard" style="display:none;">
+    <div id="map"></div>
+    <div class="daymap-caption"><span id="mapDayLabel"></span><span>Click a pin or a stop below to sync them</span></div>
+    <span class="changekey" onclick="resetKey()">Change API key</span>
+  </div>
+</div>
+
 <div class="wrap" id="days"></div>
 
 <div class="wrap know">
@@ -276,7 +179,7 @@
   <div class="know-grid" id="know"></div>
 </div>
 
-<footer>Made for the road — hand this to your driver.</footer>
+<footer>Made for the road — hand this to your driver. Tap any map pin to jump to that stop.</footer>
 
 <script>
 const DAYS = [
@@ -284,48 +187,108 @@ const DAYS = [
     id:1, title:'Central Mumbai & Malabar Hill',
     theme:'Temples, the Dhobi Ghat laundry, and a heritage walk ending with sunset on Chowpatty.',
     stops:[
-      {time:'7:00 AM', icon:'🛕', name:'Siddhivinayak Temple', area:'Prabhadevi', note:'Go early, before the darshan lines build up.', tags:['Temple']},
-      {time:'8:15 AM', icon:'🌉', name:'Worli Sea Face', area:'Worli', note:'A quick stop for the view of the Bandra–Worli Sea Link.', tags:['Viewpoint']},
-      {time:'8:45 AM', icon:'☕', name:'Lower Parel', area:'Lower Parel', note:"Breakfast or a cafe stop — also Mumbai's club district, if you want to loop back here at night.", tags:['Food','Nightlife']},
-      {time:'10:00 AM', icon:'🧺', name:'Dhobi Ghat', area:'Shanti Nagar', note:"The world's largest open-air laundry. Best seen from the bridge overlook, 20–30 minutes.", tags:['Landmark']},
-      {time:'10:45 AM', icon:'🛕', name:'Mahalakshmi Temple', area:'Bhulabhai Desai Rd', note:'Right next to Dhobi Ghat.', tags:['Temple']},
-      {time:'3:00 PM', icon:'🌳', name:'Hanging Gardens', area:'Malabar Hill', note:'A terraced garden with sea views — go once the midday heat passes.', tags:['Garden']},
-      {time:'4:00 PM', icon:'🪔', name:'Banganga Tank', area:'Walkeshwar', note:'An ancient stepped tank ringed by temples. Quiet, atmospheric walk.', tags:['Heritage']},
-      {time:'5:00 PM', icon:'🌅', name:'Girgaon Chowpatty', area:'North end of Marine Drive', note:'Sunset around 6:15–6:45pm, then dinner at the beachside stalls — bhel puri, pani puri, kulfi.', tags:['Sunset','Food']}
+      {time:'7:00 AM', icon:'🛕', name:'Siddhivinayak Temple', area:'Prabhadevi', lat:19.0169538, lng:72.8303939,
+        note:'Go early, before the darshan lines build up.', tags:['Temple']},
+      {time:'8:15 AM', icon:'🌉', name:'Worli Sea Face', area:'Worli', lat:19.0091432, lng:72.8157283,
+        note:'A quick stop for the view of the Bandra–Worli Sea Link, on the way south.', tags:['Viewpoint']},
+      {time:'8:45 AM', icon:'🧺', name:'Dhobi Ghat', area:'Shanti Nagar', lat:18.9822455, lng:72.8255146,
+        note:"The world's largest open-air laundry. Best seen from the bridge overlook, 20–30 minutes.", tags:['Landmark']},
+      {time:'9:30 AM', icon:'🛕', name:'Mahalakshmi Temple', area:'Bhulabhai Desai Rd', lat:18.9774442, lng:72.8064233,
+        note:'Right next to Dhobi Ghat — the last heritage stop before the morning turns to shopping.', tags:['Temple']},
+      {time:'10:15 AM', icon:'☕', name:'Lower Parel', area:'Lower Parel', lat:18.9982461, lng:72.8269646,
+        note:"Brunch, shopping, cafes — the walking-around stretch of the morning. Also Mumbai's club district, if you want to loop back here at night.", tags:['Food','Nightlife'],
+        picks:[
+          {tag:'Eat', name:'The Bombay Canteen', note:'Modern Indian tasting menu in Kamala Mills — order the eggs kejriwal at brunch. Sunday brunch books out about a week ahead.'},
+          {tag:'Cafe', name:'Cafe Zoe', note:'Industrial-chic European brunch and dinner, Mathuradas Mills Compound.'},
+          {tag:'Shop', name:'High Street Phoenix / Palladium', note:"India's biggest mall — Burberry, Gucci, a food court, even a trampoline park."}
+        ]},
+      {time:'3:00 PM', icon:'🌳', name:'Hanging Gardens', area:'Malabar Hill', lat:18.9565598, lng:72.8049866,
+        note:'A terraced garden with sea views — go once the midday heat passes.', tags:['Garden']},
+      {time:'4:00 PM', icon:'🪔', name:'Banganga Tank', area:'Walkeshwar', lat:18.9454102, lng:72.7937891,
+        note:'An ancient stepped tank ringed by temples. Quiet, atmospheric walk.', tags:['Heritage']},
+      {time:'5:00 PM', icon:'🌅', name:'Girgaon Chowpatty', area:'North end of Marine Drive', lat:18.9518622, lng:72.8165592,
+        note:'Sunset around 6:15–6:45pm, then dinner at the beachside stalls.', tags:['Sunset','Food'],
+        picks:[
+          {tag:'Eat', name:'Chaat carts along the promenade', note:'Bhel puri, sev puri, pani puri from the numbered stalls — a Mumbai institution right at sunset.'}
+        ]}
     ]
   },
   {
     id:2, title:'South Mumbai: Elephanta, Fort District & Night Food',
     theme:'A ferry out to Elephanta, a walk through the colonial Fort district, sunset on Marine Drive, dinner on Mohammed Ali Road.',
     stops:[
-      {time:'8:00 AM', icon:'⛵', name:'Gateway of India', area:'Colaba', note:"Ferry tickets to Elephanta leave from here — book online ahead, the dock doesn't take cash.", tags:['Landmark']},
-      {time:'8:30 AM', icon:'🗿', name:'Elephanta Caves', area:'Gharapuri Island', note:'About an hour each way by ferry, plus two hours exploring. Closed Mondays.', tags:['UNESCO']},
-      {time:'1:30 PM', icon:'🏛️', name:'Taj Mahal Palace', area:'Apollo Bandar', note:'Right beside the Gateway — walk the lobby, or grab a bite.', tags:['Landmark']},
-      {time:'2:00 PM', icon:'🛍️', name:'Colaba Causeway', area:'Colaba', note:'Shopping and cafes, all on foot. First thing to cut if the day runs long.', tags:['Shopping']},
-      {time:'3:00 PM', icon:'🎨', name:'Kala Ghoda Art District', area:'Fort', note:'Street art, galleries, the Jehangir Art Gallery, cafes.', tags:['Art']},
-      {time:'3:45 PM', icon:'⛲', name:'Flora Fountain', area:'Fort', note:'A Victorian-era fountain, right by Kala Ghoda.', tags:['Heritage']},
-      {time:'4:00 PM', icon:'🌳', name:'Horniman Circle Garden', area:'Fort', note:'A quiet garden ringed by the RBI building and the Asiatic Library.', tags:['Garden']},
-      {time:'4:30 PM', icon:'🚉', name:'Chhatrapati Shivaji Terminus', area:'Fort', note:'A UNESCO-listed Victorian Gothic station — best in the evening light.', tags:['UNESCO']},
-      {time:'5:30 PM', icon:'🌊', name:'Marine Drive', area:'Marine Drive', note:'Walk or drive the promenade as the light turns gold.', tags:['Coast']},
-      {time:'6:00 PM', icon:'🌇', name:'Nariman Point', area:'South end of Marine Drive', note:'Sunset over the Arabian Sea. Optional if the day feels long.', tags:['Sunset']},
-      {time:'7:30 PM', icon:'🍢', name:'Minara Masjid / Mohammed Ali Road', area:'Pydhonie', note:'Street food comes alive after dark — this is the dinner stop.', tags:['Food']}
+      {time:'8:00 AM', icon:'⛵', name:'Gateway of India', area:'Colaba', lat:18.9219841, lng:72.8346543,
+        note:"Ferry tickets to Elephanta leave from here — book online ahead, the dock doesn't take cash.", tags:['Landmark'],
+        photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Arch-monument%20-%20Gate%20Way%20of%20India.jpg', photoCredit:'Photo: Wikimedia Commons'},
+      {time:'8:30 AM', icon:'🗿', name:'Elephanta Caves', area:'Gharapuri Island', lat:18.9633474, lng:72.9314864,
+        note:'About an hour each way by ferry, plus two hours exploring. Closed Mondays.', tags:['UNESCO']},
+      {time:'1:30 PM', icon:'🏛️', name:'Taj Mahal Palace', area:'Apollo Bandar', lat:18.9216631, lng:72.8332028,
+        note:'Right beside the Gateway — walk the lobby, or grab a bite.', tags:['Landmark'],
+        photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Mahal%20Palace%20Hotel.jpg', photoCredit:'Photo: Joe Ravi, CC BY-SA 3.0, via Wikimedia Commons'},
+      {time:'2:00 PM', icon:'🖼️', name:'Chhatrapati Shivaji Maharaj Vastu Sangrahalaya', area:'Kala Ghoda, Fort', lat:18.926873, lng:72.8326132,
+        note:"Mumbai's best museum — Indo-Saracenic building, 60,000+ objects including sculpture from Elephanta. Closes 6pm. Enthusiasts spend 3-4 hours; budget 1.5-2 for the highlights. Photography costs extra (₹50 phone, ₹100 camera).", tags:['Museum']},
+      {time:'3:30 PM', icon:'🎨', name:'Kala Ghoda Art District', area:'Fort', lat:18.9282243, lng:72.8317835,
+        note:'Street art, galleries, cafes — right outside the museum. This is the walking-and-shopping stretch of the day.', tags:['Art'],
+        picks:[
+          {tag:'See', name:'Jehangir Art Gallery', note:"Mumbai's best-known contemporary art gallery, right on the street since 1952."},
+          {tag:'Cafe', name:'Kala Ghoda Cafe', note:"The art district's go-to coffee stop, always full."},
+          {tag:'Eat', name:'Yazdani Bakery', note:'A century-old Irani bakery — Irani chai and brun maska (buttered bun).'}
+        ]},
+      {time:'4:15 PM', icon:'⛲', name:'Flora Fountain', area:'Fort', lat:18.9324806, lng:72.8315166,
+        note:'A Victorian-era fountain, right by Kala Ghoda.', tags:['Heritage']},
+      {time:'4:30 PM', icon:'🌳', name:'Horniman Circle Garden', area:'Fort', lat:18.93197, lng:72.8350343,
+        note:'A quiet garden ringed by the RBI building and the Asiatic Library.', tags:['Garden']},
+      {time:'4:45 PM', icon:'🚉', name:'Chhatrapati Shivaji Terminus', area:'Fort', lat:18.9398446, lng:72.8354475,
+        note:'A UNESCO-listed Victorian Gothic station — best in the evening light.', tags:['UNESCO'],
+        photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Chhatrapati%20Shivaji%20Terminus%20(Victoria%20Terminus).jpg', photoCredit:'Photo: Joe Ravi, CC BY-SA 3.0, via Wikimedia Commons'},
+      {time:'5:15 PM', icon:'🌊', name:'Marine Drive', area:'Marine Drive', lat:18.943994, lng:72.822581,
+        note:'Walk or drive the promenade as the light turns gold.', tags:['Coast']},
+      {time:'5:45 PM', icon:'🌇', name:'Nariman Point', area:'South end of Marine Drive', lat:18.9255728, lng:72.8242221,
+        note:'Sunset over the Arabian Sea, timed before the BMC walk below (skip this stop instead if you need to trim).', tags:['Sunset']},
+      {time:'6:30 PM', icon:'🏛️', name:'BMC Heritage Walk', area:'Fort, opposite CST', lat:18.9407, lng:72.8339,
+        note:"Optional, Saturday-evening or Sunday-morning slots only (book via Khaki Tours/MTDC) — inside Mumbai's 130-year-old municipal HQ, right across from CST: gilded dome, floating staircase, Mayor's chamber. ~75 min. Bring photo ID, arrive at Gate 2 15 min early. Only fits if your Day 2 lands on a weekend — confirm the exact slot time when booking, since it may shift the rest of the evening.", tags:['Heritage','Optional']},
+      {time:'8:00 PM', icon:'🍢', name:'Minara Masjid / Mohammed Ali Road', area:'Pydhonie', lat:18.9545565, lng:72.8332823,
+        note:'Street food comes alive after dark — this is the dinner stop.', tags:['Food'],
+        picks:[
+          {tag:'Eat', name:'Suleman Usman', note:'The legendary sweet shop at the entrance — try the malpua and phirni.'},
+          {tag:'Eat', name:'Noor Mohammedi', note:'Famous for chicken shammi kebabs, soft enough to melt.'},
+          {tag:'Eat', name:'Shalimar', note:"Long queues for a reason — some of the city's best biryani."}
+        ]}
     ]
   },
   {
     id:3, title:'Dharavi & Juhu Beach',
     theme:'A guided morning through Dharavi, then north to Juhu for sunset and beach food.',
     stops:[
-      {time:'10:00 AM', icon:'🧵', name:'Dharavi', area:'Dharavi', note:'Book a guided tour ahead (Reality Tours is the well-known one). No photography inside — going with a guide is what makes the visit worthwhile.', tags:['Guided tour']},
-      {time:'4:30 PM', icon:'🏖️', name:'Juhu Beach', area:'Juhu', note:'Afternoon into sunset, then dinner at the beachside food stalls.', tags:['Beach','Food']}
+      {time:'10:00 AM', icon:'🧵', name:'Dharavi', area:'Dharavi', lat:19.0380334, lng:72.8537589,
+        note:'Book a guided tour ahead (Reality Tours is the well-known one). No photography inside — going with a guide is what makes the visit worthwhile.', tags:['Guided tour']},
+      {time:'4:30 PM', icon:'🏖️', name:'Juhu Beach', area:'Juhu', lat:19.1048146, lng:72.8267098,
+        note:'Afternoon into sunset, then dinner at the beachside food stalls.', tags:['Beach','Food'],
+        picks:[
+          {tag:'Eat', name:'Juhu Beach chaat stalls', note:'Pav bhaji off the butter griddle, sev puri, ragda pattice — the classic beach dinner.'},
+          {tag:'Eat', name:'Taj Ice Cream', note:'An old-school parlour, a Juhu institution for dessert after.'}
+        ]}
     ]
   },
   {
     id:4, title:'Bandra West — Free Day',
     theme:"Your open day. Go wherever it takes you, come back late — here's what's worth building around.",
     stops:[
-      {time:'', icon:'🌊', name:'Bandra Bandstand & Fort', area:'Bandra West', note:'A sea-facing promenade, Bollywood-star bungalows nearby, Mount Mary Basilica just up the hill.', tags:['Landmark']},
-      {time:'', icon:'🛍️', name:'Hill Road / Pali Village', area:'Bandra West', note:'Boutiques and hip cafes — the classic Bandra shopping stretch.', tags:['Shopping']},
-      {time:'', icon:'🚶', name:'Carter Road', area:'Bandra West', note:'A seaside promenade, popular for an evening walk and cafes.', tags:['Walk']}
+      {time:'', icon:'🌊', name:'Bandra Bandstand & Fort', area:'Bandra West', lat:19.0437089, lng:72.8195136,
+        note:'A sea-facing promenade, Bollywood-star bungalows nearby, Mount Mary Basilica just up the hill.', tags:['Landmark']},
+      {time:'', icon:'🛍️', name:'Hill Road / Pali Village', area:'Bandra West', lat:19.0575891, lng:72.8314259,
+        note:'Boutiques and street stalls — the classic Bandra shopping stretch.', tags:['Shopping'],
+        picks:[
+          {tag:'Eat', name:'Elco Restaurant & Market', note:'The Bandra chaat benchmark for decades — the pani puri counter is right out front.'},
+          {tag:'Shop', name:'Fabindia', note:'Hand-crafted clothing and homeware, sourced from artisans across India.'},
+          {tag:'Shop', name:'Two Extra Lives', note:'Vintage and sustainable fashion in Pali Village — one-of-a-kind pieces.'}
+        ]},
+      {time:'', icon:'🚶', name:'Carter Road', area:'Bandra West', lat:19.0599728, lng:72.8222188,
+        note:'A seaside promenade, popular for an evening walk and cafes.', tags:['Walk'],
+        picks:[
+          {tag:'Cafe', name:'Candies', note:'A 25-year Bandra institution in an old Pali Hill villa — fairy lights, winding stairs, cosy nooks.'},
+          {tag:'Cafe', name:'Boojee Cafe', note:'Parisian-bakery-meets-sunlit-cafe. Expect a queue on weekends.'}
+        ]}
     ]
   }
 ];
@@ -333,13 +296,19 @@ const DAYS = [
 const KNOW = [
   {icon:'🐘', title:'Elephanta is closed Mondays', text:"Don't schedule Day 2 on a Monday — the caves are shut."},
   {icon:'🎫', title:'Book the Elephanta ferry online', text:"Tickets are cashless — sort them before you get to the dock."},
-  {icon:'📸', title:'Book Dharavi ahead, no photos inside', text:'A guided tour makes the visit — and photography isn\'t allowed once you\'re in.'},
-  {icon:'⏱️', title:'Day 2 runs long', text:'11 stops from 8am to about 8:30pm. Trim Colaba Causeway or Nariman Point if it feels rushed.'},
+  {icon:'📸', title:'Book Dharavi ahead, no photos inside', text:"A guided tour makes the visit — and photography isn't allowed once you're in."},
+  {icon:'🏛️', title:'BMC Heritage Walk needs a weekend', text:'Saturday evening or Sunday morning slots only, booked through Khaki Tours/MTDC. Bring photo ID. Only works if Day 2 falls on Sat or Sun.'},
+  {icon:'⏱️', title:'Day 2 runs long either way', text:'8am to 8pm without the BMC walk, later with it. Nariman Point is the easiest single cut if it feels rushed.'},
   {icon:'🚗', title:'Driver + car, the whole trip', text:'Every hop above is short — 2 to 5 km, with no backtracking.'}
 ];
 
 const accentVar = n => ({1:'day1',2:'day2',3:'day3',4:'day4'}[n]);
+const accentHex = {1:'#D99A2B',2:'#C0603D',3:'#2E7D74',4:'#7A4B6E'};
+function mapsLink(query){
+  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query);
+}
 
+/* ---------- render timeline (map handled separately below) ---------- */
 function render(){
   const nav = document.getElementById('daynav');
   const daysEl = document.getElementById('days');
@@ -357,22 +326,29 @@ function render(){
     sec.dataset.accent = d.id;
     sec.id = 'day-' + d.id;
 
-    let routeHtml = '<div class="route">';
-    d.stops.forEach((s,idx)=>{
-      routeHtml += `<div class="seg"><div class="node">${s.icon}</div>${idx<d.stops.length-1?'<div class="connector"></div>':''}</div>`;
-    });
-    routeHtml += '</div>';
-
     let stopsHtml = '<div class="timeline">';
-    d.stops.forEach(s=>{
+    d.stops.forEach((s, idx)=>{
+      let photoHtml = '';
+      if(s.photo){
+        photoHtml = `<img class="stop-photo" src="${s.photo}" alt="${s.name}" loading="lazy" />` +
+          (s.photoCredit ? `<div class="stop-photo-credit">${s.photoCredit}</div>` : '');
+      }
+      let picksHtml = '';
+      if(s.picks && s.picks.length){
+        picksHtml = `<div class="picks"><div class="picks-label">Local picks</div>` +
+          s.picks.map(p=>`<div class="pick"><span class="pick-tag">${p.tag}</span><span class="pick-body"><b>${p.name}</b> — <span>${p.note}</span> <a class="maplink" href="${mapsLink(p.name+', '+s.area+', Mumbai')}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📍 Maps</a></span></div>`).join('') +
+          `</div>`;
+      }
       stopsHtml += `
-        <div class="stop">
+        <div class="stop" id="stop-${d.id}-${idx}">
           ${s.time?`<div class="stop-time">${s.time}</div>`:''}
-          <div class="stop-card">
+          <div class="stop-card" data-day="${d.id}" data-idx="${idx}">
+            ${photoHtml}
             <div class="stop-name-row"><span class="stop-icon">${s.icon}</span><span class="stop-name">${s.name}</span></div>
             <div class="stop-area">${s.area}</div>
             <div class="stop-note">${s.note}</div>
-            <div class="tags">${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+            <div class="tags">${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}<a class="maplink taglink" href="${mapsLink(s.name+', '+s.area+', Mumbai')}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📍 View on Google Maps</a></div>
+            ${picksHtml}
           </div>
         </div>`;
     });
@@ -384,10 +360,16 @@ function render(){
         <h2 class="day-title">${d.title}</h2>
       </div>
       <p class="day-theme">${d.theme}</p>
-      ${routeHtml}
       ${stopsHtml}
     `;
     daysEl.appendChild(sec);
+
+    sec.querySelectorAll('.stop-card').forEach(card=>{
+      card.addEventListener('click', ()=>{
+        const idx = Number(card.dataset.idx);
+        panToMarker(d.id, idx);
+      });
+    });
   });
 
   const knowEl = document.getElementById('know');
@@ -399,13 +381,133 @@ function render(){
   });
 }
 
+function flashCard(dayId, idx){
+  const card = document.querySelector(`#stop-${dayId}-${idx} .stop-card`);
+  if(!card) return;
+  card.style.setProperty('--flashcolor', accentHex[dayId] || '#D99A2B');
+  card.classList.remove('flash');
+  requestAnimationFrame(()=>{ card.classList.add('flash'); setTimeout(()=>card.classList.remove('flash'), 1200); });
+}
+
+let activeDayId = 1;
 function showDay(id){
+  activeDayId = id;
   document.querySelectorAll('.day').forEach(el=> el.classList.toggle('show', el.id === 'day-'+id));
   document.querySelectorAll('.daybtn').forEach(el=> el.classList.toggle('active', Number(el.dataset.d)===id));
   document.getElementById('day-'+id).scrollIntoView({behavior:'smooth', block:'start'});
+  if(window.__mapsReady) showDayOnMap(id);
+}
+
+/* ================= GOOGLE MAPS ================= */
+let map, markers = [], polyline = null, infoWindow = null;
+
+function saveKey(){
+  const v = document.getElementById('keyInput').value.trim();
+  if(!v) return;
+  localStorage.setItem('gmaps_key', v);
+  loadGoogleMaps();
+}
+function resetKey(){
+  localStorage.removeItem('gmaps_key');
+  document.getElementById('mapCard').style.display = 'none';
+  document.getElementById('keyPrompt').style.display = 'block';
+  window.__mapsReady = false;
+}
+function loadGoogleMaps(){
+  const key = localStorage.getItem('gmaps_key');
+  if(!key) return;
+  document.getElementById('keyPrompt').style.display = 'none';
+  document.getElementById('mapCard').style.display = 'block';
+  const script = document.createElement('script');
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(key)}&callback=initMaps&v=weekly`;
+  script.async = true;
+  script.onerror = () => { alert('Could not load Google Maps with that key. Double-check it in Google Cloud Console.'); resetKey(); };
+  document.head.appendChild(script);
+}
+window.initMaps = function(){
+  window.__mapsReady = true;
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: { lat: 18.955, lng: 72.83 },
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: true
+  });
+  infoWindow = new google.maps.InfoWindow();
+  showDayOnMap(activeDayId);
+};
+
+function clearMap(){
+  markers.forEach(m => m.setMap(null));
+  markers = [];
+  if(polyline) polyline.setMap(null);
+  polyline = null;
+}
+
+function showDayOnMap(dayId){
+  if(!map) return;
+  const day = DAYS.find(d => d.id === dayId);
+  if(!day) return;
+  clearMap();
+
+  const color = accentHex[dayId] || '#1B2A4A';
+  const bounds = new google.maps.LatLngBounds();
+  const path = [];
+
+  day.stops.forEach((s, idx) => {
+    const pos = { lat: s.lat, lng: s.lng };
+    path.push(pos);
+    bounds.extend(pos);
+
+    const marker = new google.maps.Marker({
+      position: pos,
+      map: map,
+      label: { text: String(idx+1), color:'#ffffff', fontWeight:'bold', fontSize:'12px' },
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 13,
+        fillColor: color,
+        fillOpacity: 1,
+        strokeColor: '#ffffff',
+        strokeWeight: 2
+      },
+      title: s.name
+    });
+
+    marker.addListener('click', () => {
+      infoWindow.setContent(`<div style="font-family:'Space Grotesk',sans-serif;font-size:13px;max-width:180px;"><b>${s.name}</b><br><span style="color:#777;">${s.area}</span></div>`);
+      infoWindow.open(map, marker);
+      const target = document.getElementById(`stop-${dayId}-${idx}`);
+      if(target){ target.scrollIntoView({behavior:'smooth', block:'center'}); flashCard(dayId, idx); }
+    });
+
+    markers.push(marker);
+  });
+
+  polyline = new google.maps.Polyline({
+    path: path,
+    geodesic: true,
+    strokeColor: color,
+    strokeOpacity: 0.65,
+    strokeWeight: 3,
+    map: map
+  });
+
+  map.fitBounds(bounds, 40);
+  document.getElementById('mapDayLabel').textContent = `Day ${dayId} — ${day.title}`;
+}
+
+function panToMarker(dayId, idx){
+  if(dayId !== activeDayId){ showDay(dayId); }
+  if(!map || !markers[idx]) return;
+  const marker = markers[idx];
+  map.panTo(marker.getPosition());
+  map.setZoom(Math.max(map.getZoom(), 14));
+  google.maps.event.trigger(marker, 'click');
 }
 
 render();
+if(localStorage.getItem('gmaps_key')){ loadGoogleMaps(); }
 </script>
 </body>
 </html>
